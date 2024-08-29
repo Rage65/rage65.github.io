@@ -24,10 +24,10 @@ def write_json(data, filename):
 
 def main():
     # Absolute path to the images directory
-    images_directory = r'C:\Users\Daniel\Documents\website\photogrophy\images'
+    images_directory = r'C:\Users\Daniel\Documents\GitHub\rage65.github.io\photogrophy\images'
     
     # Path to the JSON file
-    json_file_path = r'C:\Users\Daniel\Documents\website\photogrophy\images_list.json'
+    json_file_path = r'C:\Users\Daniel\Documents\GitHub\rage65.github.io\photogrophy\images_list.json'
     
     # Get list of image files
     image_files = get_image_files(images_directory)
