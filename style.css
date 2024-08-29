@@ -1,0 +1,144 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; /* Ensure box-sizing is applied to the body */
+}
+
+header {
+    background-color: rgba(51, 51, 51, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: relative;
+    margin-top: 20px;
+    box-sizing: border-box; /* Ensure box-sizing is applied to the container */
+}
+
+.corner-image {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.about-me {
+    margin-bottom: 20px;
+}
+
+.about-me p {
+    font-size: 1.1em;
+}
+
+.hobbies {
+    margin-bottom: 20px;
+}
+
+.hobbies ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.hobbies li {
+    padding: 5px 0;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1.1em;
+    margin: 5px 0;
+}
+
+.software {
+    margin-bottom: 20px;
+    padding-top: 20px;
+    position: relative; /* Positioning context for absolute positioning of children */
+}
+
+.software h3, .software p {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.software h3 {
+    top: 0; /* Align h3 to the top of .software */
+}
+
+.software p {
+    top: 2em; /* Adjust this value to position p directly below h3 */
+}
+.download-button {
+    display: block;
+    margin: 5px auto;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+}
+.download-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+    display: block; /* Make the link act like a block-level element */
+  }
+  
+  .download-link h3 {
+    margin: 0; /* Remove default margin */
+  }
