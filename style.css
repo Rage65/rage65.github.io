@@ -1,27 +1,27 @@
+/* Global Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background: linear-gradient(-45deg, #F29C11, #E94F37, #D17D3D, #F7C34C);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
-    min-height: 100vh;
+    min-height: 100vh; /* Ensure body covers full viewport height */
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box; /* Ensure box-sizing is applied to the body */
+    flex-direction: column; /* Stack header and container vertically */
+    align-items: center; /* Center content horizontally */
 }
 
 header {
-    background-color: rgba(51, 51, 51, 0.8);
-    color: #fff;
+    background-color: rgba(34, 34, 34, 0.8);
+    color: #FFF;
     text-align: center;
     padding: 10px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    width: 100%;
-    box-sizing: border-box;
+    width: 100%; /* Ensure header spans full width */
+    box-sizing: border-box; /* Include padding and border in the width */
 }
 
 header h1 {
@@ -31,26 +31,25 @@ header h1 {
 
 .container {
     max-width: 800px;
-    width: 100%;
+    width: 100%; /* Ensure container scales to max-width */
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-    position: relative;
-    margin-top: 20px;
-    box-sizing: border-box; /* Ensure box-sizing is applied to the container */
+    position: relative; /* Ensure container is positioned relatively */
+    margin-top: 20px; /* Add margin to separate from header */
 }
 
 .corner-image {
     position: absolute;
     bottom: 10px;
     right: 10px;
-    width: 100px;
+    width: 100px; /* Set width and height to create a square */
     height: 100px;
-    border: 2px solid #fff;
-    border-radius: 8px;
-    object-fit: cover;
-    object-position: center;
+    border: 2px solid #FFF; /* Add a white border */
+    border-radius: 8px; /* Adjust border-radius to match container */
+    object-fit: cover; /* Maintain aspect ratio of the image */
+    object-position: center; /* Center the image within the square */
 }
 
 @keyframes gradientAnimation {
@@ -94,51 +93,3 @@ header h1 {
     font-size: 1.1em;
     margin: 5px 0;
 }
-
-.software {
-    margin-bottom: 20px;
-    padding-top: 20px;
-    position: relative; /* Positioning context for absolute positioning of children */
-}
-
-.software h3, .software p {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-}
-
-.software h3 {
-    top: 0; /* Align h3 to the top of .software */
-}
-
-.software p {
-    top: 2em; /* Adjust this value to position p directly below h3 */
-}
-.download-button {
-    display: block;
-    margin: 5px auto;
-    padding: 8px 16px;
-    font-size: 14px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    text-align: center;
-}
-
-.download-button:hover {
-    background-color: #0056b3;
-}
-.download-link {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit color from parent */
-    display: block; /* Make the link act like a block-level element */
-  }
-  
-  .download-link h3 {
-    margin: 0; /* Remove default margin */
-  }
