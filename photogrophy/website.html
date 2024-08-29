@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
-    <link rel="stylesheet" href="../style.css"> <!-- Adjust if necessary -->
+    <link rel="stylesheet" href="../style.css">
     <style>
         /* Styling for the hobbies section */
         .hobbies {
@@ -54,74 +54,47 @@
             <h2>Hello There,</h2>
             <p>I recently got into photography and thought I would post my photos here. Feel free to download them and use them for whatever you want (if you are reposting them give me credit!)</p>
         </section>
-        <img src="_DSC1148.JPEG" alt="ru">
+        
         <section class="hobbies" id="photos-gallery">
-            <!-- Images with .jpeg extension -->
-            <div class="photo-wrapper">
-                <img src="_DSC1142.JPEG" alt="_DSC1142.JPEG">
-                <a href="_DSC1142.JPEG" download="_DSC1142.JPEG" class="download-button">Download</a>
-            </div>
-            <div class="photo-wrapper">
-                <img src="_DSC1148.JPEG" alt="_DSC1148.JPEG">
-                <a href="_DSC1148.JPEG" download="_DSC1148.JPEG" class="download-button">Download</a>
-            </div>
-            <div class="photo-wrapper">
-                <img src="_DSC1154.jpeg" alt="_DSC1154.jpeg">
-                <a href="_DSC1154.jpeg" download="_DSC1154.jpeg" class="download-button">Download</a>
-            </div>
-            <div class="photo-wrapper">
-                <img src="images/_DSC1163.jpeg" alt="_DSC1163.jpeg">
-                <a href="images/_DSC1163.jpeg" download="_DSC1163.jpeg" class="download-button">Download</a>
-            </div>
-            <div class="photo-wrapper">
-                <img src="/images/_DSC1174.jpeg" alt="_DSC1174.jpeg">
-                <a href="/images/_DSC1174.jpeg" download="_DSC1174.jpeg" class="download-button">Download</a>
-            </div>
-            <div class="photo-wrapper">
-                <img src="/images/_DSC1178.jpeg" alt="_DSC1178.jpeg">
-                <a href="/images/_DSC1178.jpeg" download="_DSC1178.jpeg" class="download-button">Download</a>
-            </div>
-            <div class="photo-wrapper">
-                <img src="/images/_DSC1187.jpeg" alt="_DSC1187.jpeg">
-                <a href="/images/_DSC1187.jpeg" download="_DSC1187.jpeg" class="download-button">Download</a>
-            </div>
-            <div class="photo-wrapper">
-                <img src="/images/_DSC1199.jpeg" alt="_DSC1199.jpeg">
-                <a href="/images/_DSC1199.jpeg" download="_DSC1199.jpeg" class="download-button">Download</a>
-            </div>
-            <div class="photo-wrapper">
-                <img src="/images/_DSC1200.jpeg" alt="_DSC1200.jpeg">
-                <a href="/images/_DSC1200.jpeg" download="_DSC1200.jpeg" class="download-button">Download</a>
-            </div>
-            <div class="photo-wrapper">
-                <img src="/images/_DSC1202.jpeg" alt="_DSC1202.jpeg">
-                <a href="/images/_DSC1202.jpeg" download="_DSC1202.jpeg" class="download-button">Download</a>
-            </div>
-            <div class="photo-wrapper">
-                <img src="/images/_DSC1203.jpeg" alt="_DSC1203.jpeg">
-                <a href="/images/_DSC1203.jpeg" download="_DSC1203.jpeg" class="download-button">Download</a>
-            </div>
-            <div class="photo-wrapper">
-                <img src="/images/_DSC1205.jpeg" alt="_DSC1205.jpeg">
-                <a href="/images/_DSC1205.jpeg" download="_DSC1205.jpeg" class="download-button">Download</a>
-            </div>
-            <div class="photo-wrapper">
-                <img src="/images/_DSC1206.jpeg" alt="_DSC1206.jpeg">
-                <a href="/images/_DSC1206.jpeg" download="_DSC1206.jpeg" class="download-button">Download</a>
-            </div>
-            <div class="photo-wrapper">
-                <img src="/images/_DSC1209.jpeg" alt="_DSC1209.jpeg">
-                <a href="/images/_DSC1209.jpeg" download="_DSC1209.jpeg" class="download-button">Download</a>
-            </div>
-            <div class="photo-wrapper">
-                <img src="/images/_DSC1223.jpeg" alt="_DSC1223.jpeg">
-                <a href="/images/_DSC1223.jpeg" download="_DSC1223.jpeg" class="download-button">Download</a>
-            </div>
-            <div class="photo-wrapper">
-                <img src="/images/_DSC1224.jpeg" alt="_DSC1224.jpeg">
-                <a href="/images/_DSC1224.jpeg" download="_DSC1224.jpeg" class="download-button">Download</a>
-            </div>
+            <!-- Images will be loaded here -->
         </section>
+        
+      
     </div>
+
+    <script>
+        const imagesPath = 'images/';
+        
+        async function loadImages() {
+            const gallery = document.getElementById('photos-gallery');
+            try {
+                const response = await fetch('images_list.json');
+                const imageFiles = await response.json();
+
+                imageFiles.forEach(file => {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'photo-wrapper';
+                    
+                    const img = document.createElement('img');
+                    img.src = `${imagesPath}${file}`;
+                    img.alt = file;
+
+                    const downloadButton = document.createElement('a');
+                    downloadButton.href = `${imagesPath}${file}`;
+                    downloadButton.download = file;
+                    downloadButton.className = 'download-button';
+                    downloadButton.textContent = 'Download';
+
+                    wrapper.appendChild(img);
+                    wrapper.appendChild(downloadButton);
+                    gallery.appendChild(wrapper);
+                });
+            } catch (error) {
+                console.error('Error loading images:', error);
+            }
+        }
+
+        loadImages();
+    </script>
 </body>
 </html>
