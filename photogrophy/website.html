@@ -56,45 +56,25 @@
         </section>
         
         <section class="hobbies" id="photos-gallery">
-            <!-- Images will be loaded here -->
+            <!-- Manually listed images -->
+            <div class="photo-wrapper">
+                <img src="images/_DSC1142.jpg" alt="_DSC1142.jpg">
+                <a href="images/_DSC1142.jpg" download="_DSC1142.jpg" class="download-button">Download</a>
+            </div>
+            <div class="photo-wrapper">
+                <img src="images/_DSC1148.jpg" alt="_DSC1148.jpg">
+                <a href="images/_DSC1148.jpg" download="_DSC1148.jpg" class="download-button">Download</a>
+            </div>
+            <div class="photo-wrapper">
+                <img src="images/_DSC1154.jpg" alt="_DSC1154.jpg">
+                <a href="images/_DSC1154.jpg" download="_DSC1154.jpg" class="download-button">Download</a>
+            </div>
+            <div class="photo-wrapper">
+                <img src="images/_DSC1163.jpg" alt="_DSC1163.jpg">
+                <a href="images/_DSC1163.jpg" download="_DSC1163.jpg" class="download-button">Download</a>
+            </div>
+            <!-- Add more images here -->
         </section>
-        
-      
     </div>
-
-    <script>
-        const imagesPath = 'images/';
-        
-        async function loadImages() {
-            const gallery = document.getElementById('photos-gallery');
-            try {
-                const response = await fetch('images_list.json');
-                const imageFiles = await response.json();
-
-                imageFiles.forEach(file => {
-                    const wrapper = document.createElement('div');
-                    wrapper.className = 'photo-wrapper';
-                    
-                    const img = document.createElement('img');
-                    img.src = `${imagesPath}${file}`;
-                    img.alt = file;
-
-                    const downloadButton = document.createElement('a');
-                    downloadButton.href = `${imagesPath}${file}`;
-                    downloadButton.download = file;
-                    downloadButton.className = 'download-button';
-                    downloadButton.textContent = 'Download';
-
-                    wrapper.appendChild(img);
-                    wrapper.appendChild(downloadButton);
-                    gallery.appendChild(wrapper);
-                });
-            } catch (error) {
-                console.error('Error loading images:', error);
-            }
-        }
-
-        loadImages();
-    </script>
 </body>
 </html>
