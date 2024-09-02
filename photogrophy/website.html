@@ -9,7 +9,7 @@
         /* Updated styling for the hobbies section */
         .hobbies {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 10px; /* Space between images */
             justify-items: center; /* Center align images horizontally */
         }
@@ -22,13 +22,12 @@
 
         .hobbies img {
             width: 100%;
-            height: 100%;
+            height: auto;
             display: block;
-            object-fit: cover; /* Cover the container without distortion */
+            object-fit: contain; /* Maintain original aspect ratio */
             border: 2px solid #ccc;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            aspect-ratio: 4 / 3; /* Maintain a consistent aspect ratio */
         }
 
         .download-button {
