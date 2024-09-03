@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>photo gallery</title>
+    <title>Photo Gallery</title>
     <link rel="stylesheet" href="../style.css">
     <style>
         /* Styling for the hobbies section */
@@ -13,20 +13,27 @@
             gap: 10px; /* Space between images */
             justify-content: center; /* Center align images */
         }
-        
+
         .hobbies .photo-wrapper {
             position: relative;
             display: inline-block;
+            cursor: pointer;
         }
-        
+
         .hobbies img {
-            width: 200px; /* Adjust size as needed */
-            height: auto;
+            width: 200px; /* Fixed width for uniform aspect ratio */
+            height: 150px; /* Fixed height for uniform aspect ratio */
+            object-fit: cover; /* Ensure the image covers the area while maintaining aspect ratio */
             border: 2px solid #ccc;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s; /* Smooth transition for hover effect */
         }
-        
+
+        .hobbies img:hover {
+            transform: scale(1.05); /* Slightly enlarge image on hover */
+        }
+
         .download-button {
             display: block;
             margin: 5px auto;
@@ -39,9 +46,46 @@
             text-decoration: none;
             text-align: center;
         }
-        
+
         .download-button:hover {
             background-color: #0056b3;
+        }
+
+        /* Fullscreen modal */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000; /* On top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9); /* Black with slight opacity */
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -54,17 +98,21 @@
             <h2>Hello There,</h2>
             <p>I recently got into photography and thought I would post my photos here. Feel free to download them and use them for whatever you want (if you are reposting them give me credit!)</p>
         </section>
-        
+
         <section class="hobbies" id="photos-gallery">
             <!-- Images will be loaded here -->
         </section>
-        
-      
+    </div>
+
+    <!-- Fullscreen Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="imgModal">
     </div>
 
     <script>
         const imagesPath = 'images/';
-        
+
         async function loadImages() {
             const gallery = document.getElementById('photos-gallery');
             try {
@@ -74,7 +122,7 @@
                 imageFiles.forEach(file => {
                     const wrapper = document.createElement('div');
                     wrapper.className = 'photo-wrapper';
-                    
+
                     const img = document.createElement('img');
                     img.src = `${imagesPath}${file}`;
                     img.alt = file;
@@ -88,9 +136,35 @@
                     wrapper.appendChild(img);
                     wrapper.appendChild(downloadButton);
                     gallery.appendChild(wrapper);
+
+                    // Add click event to open modal with full image
+                    img.addEventListener('click', function() {
+                        openModal(this.src);
+                    });
                 });
             } catch (error) {
                 console.error('Error loading images:', error);
+            }
+        }
+
+        function openModal(src) {
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("imgModal");
+
+            modal.style.display = "block";
+            modalImg.src = src;
+
+            const closeBtn = document.getElementsByClassName("close")[0];
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+        }
+
+        // Close the modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById("myModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
             }
         }
 
