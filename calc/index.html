@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iOS Calculator</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #000;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .calculator {
+      width: 300px;
+      padding: 20px;
+      background-color: #333;
+      border-radius: 20px;
+      position: relative;
+    }
+
+    .display {
+      width: 100%;
+      height: 80px;
+      background-color: #222;
+      color: white;
+      font-size: 40px;
+      text-align: right;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+    }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+    }
+
+    button {
+      width: 100%;
+      height: 70px;
+      font-size: 24px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* Number buttons */
+    button.number {
+      background-color: #505050;
+      color: white;
+    }
+
+    /* Operator buttons */
+    button.operator {
+      background-color: #ff9f0a;
+      color: white;
+    }
+
+    /* Special buttons */
+    button.special {
+      background-color: #d4d4d2;
+      color: black;
+    }
+
+    /* Zero button span */
+    .zero {
+      grid-column: span 2;
+    }
+
+    /* Explosion animation */
+    @keyframes explosion {
+      0% { opacity: 1; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+      100% { opacity: 0; transform: scale(2); }
+    }
+
+    .explosion {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 480px;
+      height: 285px;
+      background-image: url('https://th.bing.com/th/id/R.11b6d87df99112c512cce33228477b9a?rik=7wcGAUYFG6PWpw&pid=ImgRaw&r=0');
+      background-size: cover;
+      opacity: 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="button-grid">
+      <button class="special" onclick="clearDisplay()">AC</button>
+      <button class="special" onclick="negate()">+/-</button>
+      <button class="special" onclick="percent()">%</button>
+      <button class="operator" onclick="appendOperator('/')">÷</button>
+
+      <button class="number" onclick="appendNumber(7)">7</button>
+      <button class="number" onclick="appendNumber(8)">8</button>
+      <button class="number" onclick="appendNumber(9)">9</button>
+      <button class="operator" onclick="appendOperator('*')">×</button>
+
+      <button class="number" onclick="appendNumber(4)">4</button>
+      <button class="number" onclick="appendNumber(5)">5</button>
+      <button class="number" onclick="appendNumber(6)">6</button>
+      <button class="operator" onclick="appendOperator('-')">−</button>
+
+      <button class="number" onclick="appendNumber(1)">1</button>
+      <button class="number" onclick="appendNumber(2)">2</button>
+      <button class="number" onclick="appendNumber(3)">3</button>
+      <button class="operator" onclick="appendOperator('+')">+</button>
+
+      <button class="number zero" onclick="appendNumber(0)">0</button>
+      <button class="number" onclick="appendDot()">.</button>
+      <button class="operator" onclick="calculate()">=</button>
+    </div>
+    <div class="explosion" id="explosion"></div>
+  </div>
+
+  <script>
+    let display = document.getElementById('display');
+    let explosion = document.getElementById('explosion');
+    let currentInput = '0';
+    let operator = '';
+    let previousInput = '';
+
+    function appendNumber(number) {
+      console.log('appendNumber called with:', number); // Added for debugging
+      if (currentInput === '0') {
+        currentInput = number.toString();
+      } else {
+        currentInput += number.toString();
+      }
+      updateDisplay();
+    }
+
+    function appendDot() {
+      if (!currentInput.includes('.')) {
+        currentInput += '.';
+      }
+      updateDisplay();
+    }
+
+    function appendOperator(op) {
+      if (operator === '') {
+        operator = op;
+        previousInput = currentInput;
+        currentInput = '0';
+      } else {
+        calculate();
+        operator = op;
+      }
+      updateDisplay();
+    }
+
+    function calculate() {
+      if (operator === '') return;
+
+      let result;
+      const prev = parseFloat(previousInput);
+      const curr = parseFloat(currentInput);
+
+      if (operator === '/' && curr === 0) {
+        triggerExplosion();
+        clearDisplay();
+        return;
+      }
+
+      switch (operator) {
+        case '+':
+          result = prev + curr;
+          break;
+        case '-':
+          result = prev - curr;
+          break;
+        case '*':
+          result = prev * curr;
+          break;
+        case '/':
+          result = prev / curr;
+          break;
+        default:
+          return;
+      }
+
+      currentInput = result.toString();
+      operator = '';
+      previousInput = '';
+      updateDisplay();
+    }
+
+    function clearDisplay() {
+      currentInput = '0';
+      operator = '';
+      previousInput = '';
+      updateDisplay();
+    }
+
+    function negate() {
+      currentInput = (parseFloat(currentInput) * -1).toString();
+      updateDisplay();
+    }
+
+    function percent() {
+      currentInput = (parseFloat(currentInput) / 100).toString();
+      updateDisplay();
+    }
+
+    function updateDisplay() {
+      display.textContent = currentInput;
+    }
+
+    function triggerExplosion() {
+      explosion.style.opacity = 1;
+      explosion.style.animation = 'explosion 1s ease-out';
+      setTimeout(() => {
+        explosion.style.opacity = 0;
+        explosion.style.animation = '';
+      }, 1000);
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key >= '0' && event.key <= '9') {
+        appendNumber(event.key);
+      } else if (event.key === '.') {
+        appendDot();
+      } else if (event.key === '+') {
+        appendOperator('+');
+      } else if (event.key === '-') {
+        appendOperator('-');
+      } else if (event.key === '*') {
+        appendOperator('*');
+      } else if (event.key === '/') {
+        event.preventDefault();
+        appendOperator('/');
+      } else if (event.key === 'Enter' || event.key === '=') {
+        event.preventDefault();
+        calculate();
+      } else if (event.key === 'Backspace') {
+        clearDisplay();
+      } else if (event.key === 'Escape') {
+        clearDisplay();
+      }
+    });
+  </script>
+
+</body>
+</html>
