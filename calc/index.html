@@ -1,259 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iOS Calculator</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #000;
-      font-family: 'Arial', sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            font-family: Arial, sans-serif;
+        }
 
-    .calculator {
-      width: 300px;
-      padding: 20px;
-      background-color: #333;
-      border-radius: 20px;
-      position: relative;
-    }
+        .calculator {
+            width: 320px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border: 2px solid white;
+        }
 
-    .display {
-      width: 100%;
-      height: 80px;
-      background-color: #222;
-      color: white;
-      font-size: 40px;
-      text-align: right;
-      padding: 20px;
-      border-radius: 15px;
-      margin-bottom: 15px;
-      box-sizing: border-box;
-    }
+        .display {
+            background-color: black;
+            color: white;
+            font-size: 48px;
+            text-align: right;
+            padding: 20px;
+            height: 80px;
+            overflow: hidden;
+        }
 
-    .button-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: 10px;
-    }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
 
-    button {
-      width: 100%;
-      height: 70px;
-      font-size: 24px;
-      border: none;
-      border-radius: 15px;
-      cursor: pointer;
-      outline: none;
-    }
+        .button {
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+            height: 80px;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
 
-    /* Number buttons */
-    button.number {
-      background-color: #505050;
-      color: white;
-    }
+        .button:hover {
+            background-color: #444;
+        }
 
-    /* Operator buttons */
-    button.operator {
-      background-color: #ff9f0a;
-      color: white;
-    }
+        .operator {
+            background-color: #ff9500;
+            color: white;
+            border: none;
+        }
 
-    /* Special buttons */
-    button.special {
-      background-color: #d4d4d2;
-      color: black;
-    }
+        .operator:hover {
+            background-color: #ff7e00;
+        }
 
-    /* Zero button span */
-    .zero {
-      grid-column: span 2;
-    }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
 
-    /* Explosion animation */
-    @keyframes explosion {
-      0% { opacity: 1; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.5); }
-      100% { opacity: 0; transform: scale(2); }
-    }
-
-    .explosion {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 480px;
-      height: 285px;
-      background-image: url('https://th.bing.com/th/id/R.11b6d87df99112c512cce33228477b9a?rik=7wcGAUYFG6PWpw&pid=ImgRaw&r=0');
-      background-size: cover;
-      opacity: 0;
-    }
-
-  </style>
+        .modal video {
+            width: 80%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-
-  <div class="calculator">
-    <div class="display" id="display">0</div>
-    <div class="button-grid">
-      <button class="special" onclick="clearDisplay()">AC</button>
-      <button class="special" onclick="negate()">+/-</button>
-      <button class="special" onclick="percent()">%</button>
-      <button class="operator" onclick="appendOperator('/')">÷</button>
-
-      <button class="number" onclick="appendNumber(7)">7</button>
-      <button class="number" onclick="appendNumber(8)">8</button>
-      <button class="number" onclick="appendNumber(9)">9</button>
-      <button class="operator" onclick="appendOperator('*')">×</button>
-
-      <button class="number" onclick="appendNumber(4)">4</button>
-      <button class="number" onclick="appendNumber(5)">5</button>
-      <button class="number" onclick="appendNumber(6)">6</button>
-      <button class="operator" onclick="appendOperator('-')">−</button>
-
-      <button class="number" onclick="appendNumber(1)">1</button>
-      <button class="number" onclick="appendNumber(2)">2</button>
-      <button class="number" onclick="appendNumber(3)">3</button>
-      <button class="operator" onclick="appendOperator('+')">+</button>
-
-      <button class="number zero" onclick="appendNumber(0)">0</button>
-      <button class="number" onclick="appendDot()">.</button>
-      <button class="operator" onclick="calculate()">=</button>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="button operator" onclick="clearDisplay()">C</button>
+            <button class="button operator" onclick="appendToDisplay('/')">÷</button>
+            <button class="button operator" onclick="appendToDisplay('*')">×</button>
+            <button class="button operator" onclick="appendToDisplay('-')">−</button>
+            <button class="button" onclick="appendToDisplay('7')">7</button>
+            <button class="button" onclick="appendToDisplay('8')">8</button>
+            <button class="button" onclick="appendToDisplay('9')">9</button>
+            <button class="button operator" onclick="appendToDisplay('+')">+</button>
+            <button class="button" onclick="appendToDisplay('4')">4</button>
+            <button class="button" onclick="appendToDisplay('5')">5</button>
+            <button class="button" onclick="appendToDisplay('6')">6</button>
+            <button class="button" onclick="calculateResult()">=</button>
+            <button class="button" onclick="appendToDisplay('1')">1</button>
+            <button class="button" onclick="appendToDisplay('2')">2</button>
+            <button class="button" onclick="appendToDisplay('3')">3</button>
+            <button class="button" onclick="appendToDisplay('0')">0</button>
+            <button class="button operator" onclick="appendToDisplay('.')">.</button>
+        </div>
     </div>
-    <div class="explosion" id="explosion"></div>
-  </div>
 
-  <script>
-    let display = document.getElementById('display');
-    let explosion = document.getElementById('explosion');
-    let currentInput = '0';
-    let operator = '';
-    let previousInput = '';
+    <!-- Modal for the GIF -->
+    <div class="modal" id="error-modal">
+        <video id="error-gif" autoplay controls>
+            <source src="explosion.mp4" type="video/mp4">
+        </video>
+    </div>
 
-    function appendNumber(number) {
-      console.log('appendNumber called with:', number); // Added for debugging
-      if (currentInput === '0') {
-        currentInput = number.toString();
-      } else {
-        currentInput += number.toString();
-      }
-      updateDisplay();
-    }
+    <script>
+        let display = document.getElementById('display');
+        let errorModal = document.getElementById('error-modal');
 
-    function appendDot() {
-      if (!currentInput.includes('.')) {
-        currentInput += '.';
-      }
-      updateDisplay();
-    }
+        function appendToDisplay(value) {
+            if (display.innerText === '0') {
+                display.innerText = value;
+            } else {
+                display.innerText += value;
+            }
+        }
 
-    function appendOperator(op) {
-      if (operator === '') {
-        operator = op;
-        previousInput = currentInput;
-        currentInput = '0';
-      } else {
-        calculate();
-        operator = op;
-      }
-      updateDisplay();
-    }
+        function calculateResult() {
+            try {
+                const result = eval(display.innerText);
+                if (result === Infinity || result === -Infinity || isNaN(result)) {
+                    showError();
+                } else {
+                    display.innerText = result.toString();
+                }
+            } catch (e) {
+                showError();
+            }
+        }
 
-    function calculate() {
-      if (operator === '') return;
+        function showError() {
+            errorModal.style.display = 'flex'; // Show the modal
+            document.querySelector('.calculator').style.display = 'none'; // Hide the calculator
+        }
 
-      let result;
-      const prev = parseFloat(previousInput);
-      const curr = parseFloat(currentInput);
+        function clearDisplay() {
+            display.innerText = '0';
+            errorModal.style.display = 'none'; // Hide the modal when cleared
+            document.querySelector('.calculator').style.display = 'block'; // Show the calculator again
+        }
 
-      if (operator === '/' && curr === 0) {
-        triggerExplosion();
-        clearDisplay();
-        return;
-      }
-
-      switch (operator) {
-        case '+':
-          result = prev + curr;
-          break;
-        case '-':
-          result = prev - curr;
-          break;
-        case '*':
-          result = prev * curr;
-          break;
-        case '/':
-          result = prev / curr;
-          break;
-        default:
-          return;
-      }
-
-      currentInput = result.toString();
-      operator = '';
-      previousInput = '';
-      updateDisplay();
-    }
-
-    function clearDisplay() {
-      currentInput = '0';
-      operator = '';
-      previousInput = '';
-      updateDisplay();
-    }
-
-    function negate() {
-      currentInput = (parseFloat(currentInput) * -1).toString();
-      updateDisplay();
-    }
-
-    function percent() {
-      currentInput = (parseFloat(currentInput) / 100).toString();
-      updateDisplay();
-    }
-
-    function updateDisplay() {
-      display.textContent = currentInput;
-    }
-
-    function triggerExplosion() {
-      explosion.style.opacity = 1;
-      explosion.style.animation = 'explosion 1s ease-out';
-      setTimeout(() => {
-        explosion.style.opacity = 0;
-        explosion.style.animation = '';
-      }, 1000);
-    }
-
-    document.addEventListener('keydown', function(event) {
-      if (event.key >= '0' && event.key <= '9') {
-        appendNumber(event.key);
-      } else if (event.key === '.') {
-        appendDot();
-      } else if (event.key === '+') {
-        appendOperator('+');
-      } else if (event.key === '-') {
-        appendOperator('-');
-      } else if (event.key === '*') {
-        appendOperator('*');
-      } else if (event.key === '/') {
-        event.preventDefault();
-        appendOperator('/');
-      } else if (event.key === 'Enter' || event.key === '=') {
-        event.preventDefault();
-        calculate();
-      } else if (event.key === 'Backspace') {
-        clearDisplay();
-      } else if (event.key === 'Escape') {
-        clearDisplay();
-      }
-    });
-  </script>
-
+        // Add click event to close GIF
+        errorModal.addEventListener('click', function() {
+            errorModal.style.display = 'none';
+            document.querySelector('.calculator').style.display = 'block'; // Show the calculator again
+        });
+    </script>
 </body>
 </html>
