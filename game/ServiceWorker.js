@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-2d platformer-1.0";
 const contentToCache = [
-    "Build/final demo.loader.js",
-    "Build/final demo.framework.js.br",
-    "Build/final demo.data.br",
-    "Build/final demo.wasm.br",
+    "Build/game.loader.js",
+    "Build/game.framework.js.br",
+    "Build/game.data.br",
+    "Build/game.wasm.br",
     "TemplateData/style.css"
 
 ];
