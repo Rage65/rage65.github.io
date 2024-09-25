@@ -1,9 +1,9 @@
-const cacheName = "DefaultCompany-2d platformer-1.0";
+const cacheName = "Rage65-2d platformer-1.0";
 const contentToCache = [
     "Build/game.loader.js",
-    "Build/game.framework.js",
-    "Build/game.data",
-    "Build/game.wasm",
+    "Build/game.framework.js.br",
+    "Build/game.data.br",
+    "Build/game.wasm.br",
     "TemplateData/style.css"
 
 ];
