@@ -142,3 +142,21 @@ header h1 {
   .download-link h3 {
     margin: 0; /* Remove default margin */
   }
+
+  .projectes {
+    margin-bottom: 20px;
+  }
+  
+  .projectes ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .projectes li {
+    padding: 3px 0;
+    margin-bottom: 0px;
+  }
+  .projectes p {
+    font-size: 0.8em;
+    margin-top: 1px;
+  }
