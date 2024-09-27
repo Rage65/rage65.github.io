@@ -1,9 +1,9 @@
 const cacheName = "Rage65-2d platformer-1.0";
 const contentToCache = [
     "Build/868ad3e5f43e7a2d53d450d58e45443c.loader.js",
-    "Build/d1842b4dd2fced1a1aa8139b91e1dd25.framework.js",
-    "Build/43770093618b44a49600e601def25864.data",
-    "Build/f0df29fce9b78b022dbc82cef47ac138.wasm",
+    "Build/f2b55c5a765f7cd961e941781eb7510e.framework.js",
+    "Build/af25a030d55c3c5f2355e66177caa462.data",
+    "Build/a61886347a70797340fc53623bb3b699.wasm",
     "TemplateData/style.css"
 
 ];
