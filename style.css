@@ -94,30 +94,6 @@ body {
         margin: 5px 0;
     }
     
-    .software {
-        margin-bottom: 20px;
-        padding-top: 20px;
-        position: relative;
-    }
-    
-    .software h3, .software p {
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: 0;
-        padding: 0;
-        text-align: left;
-    }
-    
-    .software h3 {
-        top: 0; 
-        margin-top: 10px;
-    }
-    
-    .software p {
-        top: 2em;
-        bottom: 10px; 
-    }
     .download-button {
         display: block;
         margin: 5px auto;
@@ -179,4 +155,7 @@ body {
     .OS {
         text-align: center;
     }
+
+
+
 
