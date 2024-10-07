@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapsible List</title>
+    <style>
+        details {
+            margin-bottom: 10px;
+        }
+
+        details summary {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 5px;
+        }
+
+        details[open] summary {
+            color: darkblue;
+        }
+
+        details div {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Collapsible List Example</h2>
+
+<details>
+    <summary>Fruits</summary>
+    <div>
+        <ul>
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Orange</li>
+        </ul>
+    </div>
+</details>
+
+<details>
+    <summary>Vegetables</summary>
+    <div>
+        <ul>
+            <li>Carrot</li>
+            <li>Broccoli</li>
+            <li>Spinach</li>
+       

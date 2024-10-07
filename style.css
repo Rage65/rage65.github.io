@@ -39,7 +39,7 @@ body {
         margin-top: 20px;
         box-sizing: border-box; 
     }
-    
+
     .corner-image {
         position: absolute;
         bottom: 10px;
@@ -166,6 +166,7 @@ body {
         margin-right: auto;
         width: 90%; 
       }
+
     .OS {
         text-align: center;
         text-decoration: none;
@@ -187,4 +188,12 @@ body {
       .software p {
         font-size: 0.8em;
        
+      }
+      .archives a{
+        text-decoration: none;
+        color: #0000EE;
+      }
+      .projectes a{
+        text-decoration: none;
+        color: #0000EE;
       }
