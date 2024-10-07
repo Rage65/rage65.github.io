@@ -73,20 +73,27 @@ body {
     }
     
     .hobbies {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         text-decoration: none;
     }
     
     .hobbies ul {
         list-style-type: none;
         padding: 0;
+
     }
     
     .hobbies li {
-        padding: 5px 0;
-        text-decoration: none;
-        color: inherit;
+        padding: 5px;
+    
+
     }
+    .hobbies a{
+      text-decoration: none;
+      color: #0000EE;
+    }
+
+
     
     .contact-info {
         margin-bottom: 20px;
@@ -95,6 +102,10 @@ body {
     .contact-info p {
         font-size: 1.1em;
         margin: 5px 0;
+    }
+    .contact-info a{
+      text-decoration: none;
+      color: #0000EE;
     }
     
     .download-button {
