@@ -10,7 +10,7 @@
         <h1>Screensavers</h1>
     </header>
     <div class="container">
-        <section class="OS"><h1 style="color: #008080;">Windows 9X</h1></section>
+        <section class="OS" data-target="9X"><h1 style="color: #008080;">Windows 9X</h1></section>
         <section class="titles">
             <h2>3d maze</h2>
             <img src="images/1.webp" alt="3dMazw">
@@ -34,12 +34,12 @@
             <img src="images/7.png" alt="M.M.M">
             <a href="9x/Mystify Your Mind.scr" download="Mystufy Your Mind.scr"><div class="download-button">Download</div></a>        
         </section>
-        <section class="OS"><h1 style="color: #3A6EA5;">Windows 2000</h1></section>
+        <section class="OS" data-target="2K"><h1 style="color: #3A6EA5;">Windows 2000</h1></section>
         <section class="titles">
             <h2>Defult</h2>
             <img src="images/8.png" alt="2k baby!">
         </section>
-        <section class="OS"><h1 style="color: #027902;">Windows XP</h1></section>
+        <section class="OS" data-target="XP"><h1 style="color: #027902;">Windows XP</h1></section>
         <section class="titles">
             <h2>3D Flying Objects (xp)</h2>
             <img src="images/9.jpeg" alt="XP">
@@ -57,7 +57,7 @@
             <img src="images/12.png" alt="ItsJustText">
             <a href="xp/ssmarque.scr" download="Marquee.scr"><div class="download-button">Download</div></a>
         </section>
-        <section class="OS"><h1 style="color:#33aaaa ;">Windows Vista</h1></section>
+        <section class="OS" data-target="Vista"><h1 style="color:#33aaaa ;">Windows Vista</h1></section>
         <section class="titles">
             <h2>Aurora</h2>
             <img src="images/14.jpeg" alt="howDoesthisWallpaperDestroyaModernIGPUwithOnly2screens?">
@@ -72,7 +72,7 @@
             <img src="images/17.jpg" alt="coolAnimationBadCuts">
             <a href="vista/ssBranded.scr" download="Windows Energy.scr"><div class="download-button">Download</div></a>
         </section>
-        <section class="OS"><h1 style="color: #0400fa;">Windows 7</h1></section>
+        <section class="OS" data-target="7"><h1 style="color: #0400fa;">Windows 7</h1></section>
         <section class="titles">
             <h2>Mystify</h2>
             <img src="images/18.jpg" alt="shapes">
@@ -84,4 +84,17 @@
             <img src="images/19.avif" alt="BetterThan9X">
             <a href="7/ssText3d.scr" download="3D Text.scr"><div class="download-button">Download</div></a>
         </section>
+        <script>
+            document.querySelectorAll('.OS').forEach(osHeader => {
+                osHeader.addEventListener('click', () => {
+                    const contentSection = osHeader.nextElementSibling;
+                    if (contentSection.style.display === 'none' || !contentSection.style.display) {
+                        contentSection.style.display = 'block';
+                    } else {
+                        contentSection.style.display = 'none';
+                    }
+                });
+            });
+        </script>
+        
     </body>

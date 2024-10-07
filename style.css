@@ -151,6 +151,9 @@ body {
         font-size: 0.8em;
         margin-top: 1px;
       }
+      .titles{
+        display: none;
+      }
       .titles h2 {
         color: hsl(0, 0%, 0%);
         margin-bottom: 0px;
@@ -170,7 +173,12 @@ body {
     .OS {
         text-align: center;
         text-decoration: none;
+        cursor: pointer;
     }
+
+    .OS h1:hover {
+      text-decoration: underline;
+  }
 
       .software {
         margin-bottom: 10px;
