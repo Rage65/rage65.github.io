@@ -156,6 +156,20 @@ body {
         text-align: center;
     }
 
-
-
-
+      .software {
+        margin-bottom: 10px;
+      }
+      
+      .software ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      
+      .software li {
+        padding: 3px 0;
+        margin-bottom: 0px;
+      }
+      .software p {
+        font-size: 0.8em;
+       
+      }
