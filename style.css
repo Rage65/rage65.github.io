@@ -74,6 +74,7 @@ body {
     
     .hobbies {
         margin-bottom: 20px;
+        text-decoration: none;
     }
     
     .hobbies ul {
@@ -83,6 +84,8 @@ body {
     
     .hobbies li {
         padding: 5px 0;
+        text-decoration: none;
+        color: inherit;
     }
     
     .contact-info {
@@ -154,6 +157,7 @@ body {
       }
     .OS {
         text-align: center;
+        text-decoration: none;
     }
 
       .software {
