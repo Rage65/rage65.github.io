@@ -1,31 +1,50 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wallpapers</title>
+    <title>Saverscreens</title>
     <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
     <header>
-        <h1>Wallpapers</h1>
-        <p>note: Each os inclueds some from special versions of the os</p>
+        <h1>Screensavers</h1>
     </header>
     <div class="container">
-        <section class="OS">
-            <a href="9x.html"><h1 style="color: #008080;">Windows 9X</h1></a>
-
+        <section class="OS" data-target="9X"><h1 style="color: #008080;">Windows 9X</h1></section>
+        <section class="titles">
+            <h2>3d maze</h2>
+            <img src="images/1.webp" alt="3dMazw">
+            <a href="9x/3D Maze.scr" download="3D Maze.scr"><div class="download-button">Download</div></a>
+   
         </section>
-        <section class="OS">
-           <a href="2k.html"><h1 style="color: #3A6EA5;">Windows 2000</h1></a>
+        <section class="OS" data-target="2K"><h1 style="color: #3A6EA5;">Windows 2000</h1></section>
+        <section class="titles">
+           
         </section>
-        <section class="OS">
-           <a href="xp.html"><h1 style="color: #027902;">Windows XP</h1></a>
+        <section class="OS" data-target="XP"><h1 style="color: #027902;">Windows XP</h1></section>
+        <section class="titles">
+           
         </section>
-        <section class="OS">
-            <a href="vista.html"><h1 style="color:#33aaaa ;">Windows Vista</h1></a>
+        <section class="OS" data-target="Vista"><h1 style="color:#33aaaa ;">Windows Vista</h1></section>
+        <section class="titles">
+            
         </section>
-        <section class="OS"><a href="7.html"><h1 style="color: #0400fa;">Windows 7</h1></a></section>
-    </div>
-</body>
-</html>
+        <section class="OS" data-target="7"><h1 style="color: #0400fa;">Windows 7</h1></section>
+        <section class="titles">
+            <h2>Mystify</h2>
+           
+        </section>
+        <script>
+            document.querySelectorAll('.OS').forEach(osHeader => {
+                osHeader.addEventListener('click', () => {
+                    const contentSection = osHeader.nextElementSibling;
+                    if (contentSection.style.display === 'none' || !contentSection.style.display) {
+                        contentSection.style.display = 'block';
+                    } else {
+                        contentSection.style.display = 'none';
+                    }
+                });
+            });
+        </script>
+        
+    </body>
