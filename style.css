@@ -170,15 +170,7 @@ body {
         width: 90%; 
       }
 
-    .OS {
-        text-align: center;
-        text-decoration: none;
-        cursor: pointer;
-    }
 
-    .OS h1:hover {
-      text-decoration: underline;
-  }
 
       .software {
         margin-bottom: 10px;
