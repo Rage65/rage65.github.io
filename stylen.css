@@ -160,3 +160,90 @@ header h1 {
     font-size: 0.8em;
     margin-top: 1px;
   }
+  .titles{
+    display: none;
+  }
+  .titles h2 {
+    color: hsl(0, 0%, 0%);
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+
+
+  
+  .titles img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%; 
+  }
+
+.OS {
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.OS h1:hover {
+  text-decoration: underline;
+}
+
+  .software {
+    margin-bottom: 10px;
+  }
+  
+  .software ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .software li {
+    padding: 3px 0;
+    margin-bottom: 0px;
+  }
+  .software p {
+    font-size: 0.8em;
+   
+  }
+  .archives a{
+    text-decoration: none;
+    color: #0000EE;
+  }
+  .projectes a{
+    text-decoration: none;
+    color: #0000EE;
+  }
+  .ctstory {
+    margin-bottom: 20px;
+}
+
+.ctstory p {
+    font-size: 1.1em;
+}
+
+
+pre code {
+  margin-top: -10px;
+  position: static;
+  display: block;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+}
+
+.copy-button1 {
+position: absolute;
+  margin-left: 700px;
+  margin-top: 7px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.copy-button1 :hover{
+    color:#0056b3 ;
+}

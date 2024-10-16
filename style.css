@@ -125,7 +125,7 @@ body {
         padding: 8px 16px;
         font-size: 14px;
         color: #fff;
-        background-color: #007bff;
+        background-color: #eb7c1c;
         border: none;
         border-radius: 4px;
         text-decoration: none;
@@ -133,7 +133,7 @@ body {
     }
     
     .download-button:hover {
-        background-color: #0056b3;
+        background-color: #cf6607;
     }
     .download-link {
         text-decoration: none; 
@@ -216,3 +216,38 @@ body {
         text-decoration: none;
         color: #0000EE;
       }
+      .ctstory {
+        margin-bottom: 20px;
+    }
+    
+    .ctstory p {
+        font-size: 1.1em;
+    }
+
+
+    pre code {
+      margin-top: -10px;
+      position: static;
+      display: block;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f4f4f4;
+  }
+  
+  .copy-button1 {
+    position: absolute;
+      margin-left: 700px;
+      margin-top: 7px;
+      padding: 5px 10px;
+      border: none;
+      background-color: #eb7c1c;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+  }
+  
+  .copy-button1:hover {
+      background-color: #cf6607;
+  }
+  
