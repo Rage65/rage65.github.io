@@ -245,5 +245,5 @@ position: absolute;
   border-radius: 5px;
 }
 .copy-button1 :hover{
-    color:#0056b3 ;
+    background-color:#0056b3 ;
 }
