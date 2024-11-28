@@ -235,7 +235,7 @@ body {
       background-color: #f4f4f4;
   }
   
-  .copy-button1 {
+  .copy-button {
     position: absolute;
       margin-left: 700px;
       margin-top: 7px;
@@ -247,7 +247,7 @@ body {
       border-radius: 5px;
   }
   
-  .copy-button1:hover {
+  .copy-button:hover {
       background-color: #cf6607;
   }
   .link-button{
