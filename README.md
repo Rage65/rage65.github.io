@@ -1,1 +1,1 @@
-# Where the commits are vague and there are many o' file
+# Where the commits are vague and there are many o' strange file
