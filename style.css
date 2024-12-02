@@ -265,4 +265,6 @@ body {
 .motd {
   margin-top: 10px;
   margin-bottom: 10;
+  text-decoration: none;
+  color: black;
 }
