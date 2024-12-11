@@ -16,10 +16,324 @@ body {
 header {
     background-color: rgba(51, 51, 51, 0.8);
     color: #fff;
+    text-decoration: none;
     text-align: center;
     padding: 10px;
     border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-right-radius: 8px;body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+      min-height: 100vh; 
+      display: flex;
+      flex-direction: column; 
+      align-items: center; 
+      }
+    
+      header {
+          background-color: rgba(51, 51, 51, 0.8);
+          color: #fff;
+          text-decoration: none;
+          text-align: center;
+          padding: 10px;
+          border-bottom-left-radius: 8px;
+          border-bottom-right-radius: 8px;
+          width: 100%;
+          box-sizing: border-box;
+      }
+      
+      header h1 {
+          margin: 0;
+          font-size: 2.5em;
+      }
+    
+      header p{
+        text-align: left;
+        margin-top: 0;
+      }    
+    
+      header a{
+        text-decoration: none;
+        color: inherit;
+      }
+    
+      .container {
+          max-width: 800px;
+          width: 100%;
+          padding: 20px;
+          background-color: rgba(255, 255, 255, 0.8);
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
+          position: relative;
+          margin-top: 20px;
+          box-sizing: border-box; 
+      }
+    
+      .corner-image {
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          width: 100px;
+          height: 100px;
+          border: 2px solid #fff;
+          border-radius: 8px;
+          object-fit: cover;
+          object-position: center;
+      }
+      
+      @keyframes gradientAnimation {
+          0% {
+              background-position: 0% 50%;
+          }
+          50% {
+              background-position: 100% 50%;
+          }
+          100% {
+              background-position: 0% 50%;
+          }
+      }
+      
+      .about-me {
+          margin-bottom: 20px;
+      }
+      
+      .about-me p {
+          font-size: 1.1em;
+      }
+      
+      .hobbies {
+          margin-bottom: 10px;
+          text-decoration: none;
+      }
+      
+      .hobbies ul {
+          list-style-type: none;
+          padding: 0;
+    
+      }
+      
+      .hobbies li {
+          padding: 5px;
+      
+    
+      }
+      .hobbies a{
+        text-decoration: none;
+        color: #0000EE;
+      }
+    
+    
+      
+      .contact-info {
+          margin-bottom: 20px;
+      }
+      
+      .contact-info p {
+          font-size: 1.1em;
+          margin: 5px 0;
+      }
+      .contact-info a{
+        text-decoration: none;
+        color: #0000EE;
+      }
+      
+      .download-button {
+          display: block;
+          margin: 5px auto;
+          padding: 8px 16px;
+          font-size: 14px;
+          color: #fff;
+          background-color: #007bff;
+          border: none;
+          border-radius: 4px;
+          text-decoration: none;
+          text-align: center;
+      }
+      
+      .download-button:hover {
+          background-color:#0056b3;
+      }
+      .download-link {
+          text-decoration: none; 
+          color: inherit; 
+          display: block; 
+        }
+        
+        .download-link h3 {
+          margin: 0;
+        }
+      
+        .projectes {
+          margin-bottom: 20px;
+        }
+        
+        .projectes ul {
+          list-style-type: none;
+          padding: 0;
+        }
+        
+        .projectes li {
+          padding: 3px 0;
+          margin-bottom: 0px;
+        }
+        .projectes p {
+          font-size: 0.8em;
+          margin-top: 1px;
+        }
+        .titles{
+          display: none;
+        }
+        .titles h2 {
+          color: hsl(0, 0%, 0%);
+          margin-bottom: 0px;
+          margin-top: 10px;
+      }
+    
+    
+    
+        
+        .titles img{
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 90%; 
+        }
+    
+      .OS {
+          text-align: center;
+          text-decoration: none;
+          cursor: pointer;
+      }
+    
+      .OS h1:hover {
+        text-decoration: underline;
+    }
+    
+        .software {
+          margin-bottom: 10px;
+        }
+        
+        .software ul {
+          list-style-type: none;
+          padding: 0;
+        }
+        
+        .software li {
+          padding: 3px 0;
+          margin-bottom: 0px;
+        }
+        .software p {
+          font-size: 0.8em;
+         
+        }
+        .archives a{
+          text-decoration: none;
+          color: #0000EE;
+        }
+        .projectes a{
+          text-decoration: none;
+          color: #0000EE;
+        }
+        .ctstory {
+          margin-bottom: 20px;
+      }
+      
+      .ctstory p {
+          font-size: 1.1em;
+      }
+    
+    
+      pre code {
+        margin-top: -10px;
+        position: static;
+        display: block;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f4f4f4;
+    }
+    
+    .copy-button {
+      position: absolute;
+        margin-left: 700px;
+        margin-top: 7px;
+        padding: 5px 10px;
+        border: none;
+        background-color:#007bff;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    
+    .copy-button:hover {
+        background-color:#0056b3 ;
+    }
+    .link-button{
+      display: block;
+      margin: 4px auto;
+      padding: 6px 12px;
+      font-size: 14px;
+      color: #fff;
+      background-color: #eb7c1c;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      text-align: left;
+    }
+    .motd {
+    margin-top: 10px;
+    margin-bottom: 10;
+    text-decoration: none;
+    color: black;
+    }
+    .motd a{
+    text-decoration: none;
+    color: black;
+    }
+    /* Well Well Well, you Arent supposed to be here */
+    .gitbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 15px;
+    background-color: #181717;
+    outline: 3px #181717 solid;
+    outline-offset: -3px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 400ms;
+    margin-top: 20px;
+    }
+    
+    .gitbutton .text {
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    transition: 400ms;
+    }
+    
+    .gitbutton svg path {
+    transition: 400ms;
+    }
+    
+    .gitbutton:hover {
+    background-color: transparent;
+    }
+    
+    .gitbutton:hover .text {
+    color: #181717;
+    }
+    
+    .gitbutton:hover svg path {
+    fill: #181717;
+    }
+    
     width: 100%;
     box-sizing: border-box;
 }
@@ -29,6 +343,10 @@ header h1 {
     font-size: 2.5em;
 }
 
+header a{
+  text-decoration: none;
+  color: inherit;
+}
 .container {
     max-width: 800px;
     width: 100%;
@@ -75,6 +393,7 @@ header h1 {
 
 .hobbies {
     margin-bottom: 20px;
+    text-decoration: none;
 }
 
 .hobbies ul {
@@ -86,6 +405,11 @@ header h1 {
     padding: 5px 0;
 }
 
+.hobbies a{
+  text-decoration: none;
+  color: #0000EE;
+}
+
 .contact-info {
     margin-bottom: 20px;
 }
@@ -94,7 +418,10 @@ header h1 {
     font-size: 1.1em;
     margin: 5px 0;
 }
-
+.contact-info a{
+  text-decoration: none;
+  color: #0000EE;
+}
 .software {
     margin-bottom: 20px;
     padding-top: 20px;
@@ -284,6 +611,7 @@ position: absolute;
   cursor: pointer;
   transition: 400ms;
   margin-top: 20px;
+  
 }
 
 .gitbutton .text {
