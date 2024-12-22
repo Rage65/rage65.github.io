@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/jpeg" href="favicon.JPEG">
 </head>
+<audio src=""></audio>
 <body>
     <header>
         <h1>About Me</h1>
@@ -22,26 +23,15 @@
             <h2>Hi, I'm Rage65</h2>
             <p>I am a programer, photogropher, sys admin, homlaber, hardware hacker, and a computer lover!</p>
         </section>
-        
         <section class="hobbies">
-            <h2>My Work</h2>
-           <!-- Commented out as the styling is not quite right yet
-             <ul>
-                <div class="link-button"><li><a href="photogrophy">Photography</a></li></div>
-                <div class="link-button"><li><a href="projects">Other Projects</a></li></div>
-                <a href="archives"><div class="link-button"><li>Software Collection</li></div></a>
-                
-            </ul>
-            -->
+            <h2>My Works</h2>
                 <ul>
                     <li><a href="photogrophy">Photography</a></li>
                     <li><a href="projects">Other Projects</a></li>
                     <li><a href="archives">Archives/Software Collection</a></li>
-    
                 </ul>
             </section>
-        </section>
-        
+        </section>   
         <section class="contact-info">
             <h2>Contact Me</h2>
             <p>Discord: Rage65.</p>
@@ -52,10 +42,36 @@
                 </svg>
                 <p class="text">My Github</p>
               </button></p></a>
-              
         </section>
-        <img class="corner-image" src="pfp.JPEG" alt="Image">
-        
+       <!--<input type="checkbox" class="theme-checkbox" checked="true">--> 
+        <img class="corner-image" src="pfp.JPEG" alt="Image">   
     </div>
+    <script>  
+        const themeCheckbox = document.querySelector('.theme-checkbox');
+        const container = document.querySelector('.container');
+        const text = document.querySelectorAll('h2, p');
+    
+        themeCheckbox.addEventListener('change', () => {
+          if (themeCheckbox.checked) {
+            // Light mode
+            container.classList.remove('dark-mode');
+            container.classList.add('light-mode');
+            text.forEach(element => {
+              element.classList.add('text-dark')
+              element.classList.remove('text-light')
+            });
+          } else {
+            // Dark mode
+            container.classList.remove('light-mode');
+            container.classList.add('dark-mode');
+            text.forEach(element => {
+              element.classList.add('text-light')
+              element.classList.remove('text-dark')
+            });
+          }
+        });
+    </script> 
+
+     
 </body>
 </html>
