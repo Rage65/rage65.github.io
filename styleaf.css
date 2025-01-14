@@ -1,0 +1,395 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background: linear-gradient(-45deg, #F29C11, #E94F37, #D17D3D, #F7C34C);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  background-color: rgba(51, 51, 51, 0.8);
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+header p{
+  text-align: left;
+  margin-top: 0;
+}
+header a{
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  position: relative;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+.corner-image {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: center;
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.about-me {
+  margin-bottom: 20px;
+}
+.about-me p {
+  font-size: 1.1em;
+}
+.hobbies {
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+.hobbies ul {
+  list-style-type: none;
+  padding: 0;
+}
+.hobbies li {
+  padding: 5px;
+}
+.hobbies a{
+  text-decoration: none;
+  color: #0000EE;
+}
+.contact-info {
+  margin-bottom: 20px;
+}
+.contact-info p {
+  font-size: 1.1em;
+  margin: 5px 0;
+}
+.contact-info a{
+  text-decoration: none;
+  color: #0000EE;
+}
+.download-button {
+  display: block;
+  margin: 5px auto;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #eb7c1c;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+}
+.download-button:hover {
+  background-color: #cf6607;
+}
+.download-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.download-link h3 {
+  margin: 0;
+}
+.projectes {
+  margin-bottom: 20px;
+}
+.projectes ul {
+  list-style-type: none;
+  padding: 0;
+}
+.projectes li {
+  padding: 3px 0;
+  margin-bottom: 0px;
+}
+.projectes p {
+  font-size: 0.8em;
+  margin-top: 1px;
+}
+.titles{
+  display: none;
+}
+.titles h2 {
+  color: hsl(0, 0%, 0%);
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+.titles img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+.OS {
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.OS h1:hover {
+  text-decoration: underline;
+}
+.software {
+  margin-bottom: 10px;
+}
+.software ul {
+  list-style-type: none;
+  padding: 0;
+}
+.software li {
+  padding: 3px 0;
+  margin-bottom: 0px;
+}
+.software p {
+  font-size: 0.8em;
+}
+.archives a{
+  text-decoration: none;
+  color: #0000EE;
+}
+.projectes a{
+  text-decoration: none;
+  color: #0000EE;
+}
+.ctstory {
+  margin-bottom: 20px;
+}
+.ctstory p {
+  font-size: 1.1em;
+}
+pre code {
+  margin-top: -10px;
+  position: static;
+  display: block;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+}
+.copy-button {
+  position: absolute;
+  margin-left: 700px;
+  margin-top: 7px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #eb7c1c;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.copy-button:hover {
+  background-color: #cf6607;
+}
+.link-button{
+  display: block;
+  margin: 4px auto;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #eb7c1c;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: left;
+}
+.motd {
+  margin-top: 10px;
+  margin-bottom: 10;
+  text-decoration: none;
+  color: black;
+}
+.motd a{
+  text-decoration: none;
+  color: black;
+}
+/* Well Well Well, you Arent supposed to be here */
+.gitbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 15px;
+  background-color: #181717;
+  outline: 3px #181717 solid;
+  outline-offset: -3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+  margin-top: 20px;
+}
+.gitbutton .text {
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  transition: 400ms;
+}
+.gitbutton svg path {
+  transition: 400ms;
+}
+.gitbutton:hover {
+  background-color: transparent;
+}
+.gitbutton:hover .text {
+  color: #181717;
+}
+.gitbutton:hover svg path {
+  fill: #181717;
+}
+.theme-checkbox {
+  --toggle-size: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 6.25em;
+  height: 3.125em;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+  background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 0;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 99em;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--toggle-size);
+}
+.theme-checkbox::before {
+  content: "";
+  width: 2.25em;
+  height: 2.25em;
+  position: absolute;
+  top: 0.438em;
+  left: 0.438em;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+  background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 100%;
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+.theme-checkbox:checked::before {
+  left: calc(100% - 2.25em - 0.438em);
+  background-position: 0;
+}
+.theme-checkbox:checked {
+  background-position: 100%;
+}
+.dark-mode {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.light-mode{
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.text-light{
+  color: rgba(255, 255, 255, 0.8); ;
+}
+.text-dark{
+  color: rgba(0, 0, 0, 0.8) ;
+}
+/* From Uiverse.io by Cksunandh */
+.m2 {
+  position: relative;
+  width: 20vmin; /* Reduced size */
+  height: 20vmin; /* Reduced size */
+  background: linear-gradient(135deg, #1e1e24 10%, #050505 60%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  animation: gradient-shift 5s ease-in-out infinite; /* Faster animation */
+  background-size: 200% 200%; /* Gradient shift */
+}
+.m2 .logo {
+  display: inline-block;
+  vertical-align: baseline;
+  user-select: none;
+  font-size: 5vmin; /* Smaller font size */
+  color: white;
+  background-image: linear-gradient(to right, #626262, #fff);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-weight: bold;
+}
+.m2 .logo svg {
+  margin-right: -1vmin;
+  width: 5vmin; /* Smaller SVG size */
+  height: 5vmin; /* Smaller SVG size */
+}
+.m2::before,
+.m2::after {
+  --size: 5px; /* Reduced glow size */
+  content: "";
+  position: absolute;
+  top: calc(var(--size) / -2);
+  left: calc(var(--size) / -2);
+  width: calc(100% + var(--size));
+  height: calc(100% + var(--size));
+  background: radial-gradient(circle at 0 0, hsl(27deg 93% 60%), transparent),
+  radial-gradient(circle at 100% 0, #00a6ff, transparent),
+  radial-gradient(circle at 0 100%, #ff0056, transparent),
+  radial-gradient(circle at 100% 100%, #6500ff, transparent);
+}
+.m2::after {
+  --size: 2px;
+  z-index: -1;
+}
+.m2::before {
+  --size: 10px;
+  z-index: -2;
+  filter: blur(2vmin);
+  animation: blur-animation 3s ease-in-out alternate infinite;
+}
+@keyframes blur-animation {
+  to {
+    filter: blur(3vmin);
+    transform: scale(1.05);
+  }
+}
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+}
