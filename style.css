@@ -677,3 +677,8 @@ pre code {
     background-position: 0% 50%;
   }
 }
+.carousel-item img{
+  width: 40%;
+  height: 40%;
+  position: center;
+}
