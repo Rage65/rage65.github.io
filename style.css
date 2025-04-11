@@ -18,8 +18,7 @@ header {
   text-decoration: none;
   text-align: center;
   padding: 10px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;body {
+  body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
