@@ -11,7 +11,7 @@ device_blocks = re.split(r'\n(?=Model:)', data)
 # === Prepare PDF ===
 pdf = FPDF()
 pdf.add_page()
-pdf.image('test.png', 5, 8, 124)
+pdf.image("C:\windows\temp\logo.png", 5, 8, 124)
 
 pdf.set_font('Arial', 'B', 16)
 pdf.set_x(100)
@@ -57,7 +57,7 @@ pdf.cell(100, 5, 'TEST ONLY NOT FOR USE', border=0, ln=True, align='C')
 
 # === Signature image ===
 pdf.ln(20)
-pdf.image('CertSig.png', 0, 190, 230)
+pdf.image("C:\windows\temp\CertSig.png", 0, 190, 230)
 
 # === Save PDF ===
 pdf.output('output_certificate.pdf', 'F')
