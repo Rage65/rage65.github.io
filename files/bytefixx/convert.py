@@ -1,10 +1,16 @@
 import re
+import sys
 from fpdf import FPDF
+from datetime import date
 
+today = date.today()
+formatted_date = today.strftime("%m/%d/%Y")
 # === Read the file ===
 with open(r"C:\windows\Temp\cert.txt", "r") as f:
     data = f.read()
-
+#arguments for username and cert name
+cert_name = sys.argv[1]
+username = sys.argv[2]
 # === Pattern to split blocks by device ===
 device_blocks = re.split(r'\n(?=Model:)', data)
 
@@ -16,7 +22,11 @@ pdf.image(r"C:\windows\temp\logo.png", 5, 8, 124)
 pdf.set_font('Arial', 'B', 16)
 pdf.set_x(100)
 pdf.cell(100, 5, 'Bytefixx certificate of destruction ', border=0, ln=True, align='C')
-
+pdf.set_font('Arial', '', 12)
+pdf.set_x(100)
+pdf.cell(100, 12, cert_name, border=0, ln=True, align='C')
+pdf.set_x(100)
+pdf.cell(100, 10, formatted_date, border=0, ln=True, align='C')
 # Column headers
 pdf.set_font('Arial', 'B', 14)
 cell_width = 45
@@ -60,4 +70,5 @@ pdf.ln(20)
 pdf.image(r"C:\windows\temp\CertSig.png", 0, 190, 230)
 
 # === Save PDF ===
-pdf.output('output_certificate.pdf', 'F')
+output_path = fr'C:\Users\{username}\Desktop\{cert_name}.pdf'
+pdf.output(output_path, 'F')
