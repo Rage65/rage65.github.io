@@ -63,7 +63,7 @@ for block in device_blocks:
 # === Footer notice ===
 pdf.ln(10)
 pdf.set_x(left_margin)
-pdf.cell(100, 5, 'TEST  USE ONLY ', border=0, ln=True, align='C')
+pdf.cell(100, 5, 'TEST USE ONLY ', border=0, ln=True, align='C')
 
 # === Signature image ===
 pdf.ln(20)
