@@ -58,7 +58,7 @@ for block in device_blocks:
         pdf.cell(50, 10, device_model, border=0)
         pdf.cell(38, 10, device_serial, border=0)
         pdf.cell(50, 10, drive_serial, border=0)
-        pdf.cell(5300, 10, 'DOD Wiped', border=0, ln=True)
+        pdf.cell(5300, 10, 'Factory Reset', border=0, ln=True)
 
 # === Footer notice ===
 pdf.ln(10)
