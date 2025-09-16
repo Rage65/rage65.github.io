@@ -1,0 +1,7 @@
+seo optimisation
+Optimise meta flags on each pages
+
+Page optimisation
+lower image size/quality
+split up css
+remove unecesarry files
