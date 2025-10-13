@@ -1,0 +1,63 @@
+.corner-image {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: center;
+}
+.pulse-text {
+  display: inline-block;
+  animation: pulse 1s ease-in-out infinite;
+  margin-left: 10px;
+}
+.motd {
+  margin-top: 4px;
+  color: black;
+}
+.motd a {
+  text-decoration: none;
+  color: black;
+}
+
+/* GIT BUTTON */
+.gitbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 15px;
+  background-color: #181717;
+  outline: 3px #181717 solid;
+  outline-offset: -3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+.gitbutton .text {
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  transition: 400ms;
+}
+.gitbutton svg path {
+  transition: 400ms;
+}
+.gitbutton:hover {
+  background-color: transparent;
+}
+.gitbutton:hover .text {
+  color: #181717;
+}
+.gitbutton:hover svg path {
+  fill: #181717;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}

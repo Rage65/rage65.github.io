@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Rage65's photography, Rage65's photos"></meta>
+    <meta name="keywords" content="Rage65's photography, Rage65's photos, Rage65, rag3r, images"></meta>
     <title>Photo Gallery</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/jpeg" href="../favicon.JPEG">
@@ -95,10 +95,11 @@
 </head>
 <body>
     <header>
-       <a href="../"><h1>Photos</h1></a>
+        <!-- <input type="checkbox" class="theme-checkbox" checked="true"> -->
+       <a href="/"><h1>Photos</h1></a>
     </header>
     <div class="container">
-        <section class="about-me">
+        <section class="title">
             <h2>Hello There,</h2>
             <p>I recently got into photography and thought I would post my photos here. Feel free to download them and use them for whatever you want (Just give me credit pls!)</p>
         </section>
@@ -147,7 +148,7 @@
                     });
                 });
             } catch (error) {
-                console.error('The Hampster in the computer got tired pls try again. If the issue continues pls contact me:', error);
+                console.error('The Hampster in the computer got tired please try again. If the issue continues please contact me:', error);
             }
         }
 
@@ -174,5 +175,45 @@
 
         loadImages();
     </script>
+     <!-- <script>
+        const themeCheckbox = document.querySelector('.theme-checkbox');
+        const container = document.querySelector('.container');
+        const text = document.querySelectorAll('h2, p');
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        if (isDarkMode) {
+            themeCheckbox.checked = false;
+            container.classList.add('dark-mode');
+            text.forEach(element => {
+                element.classList.add('text-light');
+                element.classList.remove('text-dark');
+            });
+        } else {
+            themeCheckbox.checked = true;
+            container.classList.add('light-mode');
+            text.forEach(element => {
+                element.classList.add('text-dark');
+                element.classList.remove('text-light');
+            });
+        }
+        themeCheckbox.addEventListener('change', () => {
+            if (themeCheckbox.checked) {
+                container.classList.remove('dark-mode');
+                container.classList.add('light-mode');
+                text.forEach(element => {
+                    element.classList.add('text-dark');
+                    element.classList.remove('text-light');
+                });
+                localStorage.setItem('darkMode', 'false');
+            } else {
+                container.classList.remove('light-mode');
+                container.classList.add('dark-mode');
+                text.forEach(element => {
+                    element.classList.add('text-light');
+                    element.classList.remove('text-dark');
+                });
+                localStorage.setItem('darkMode', 'true');
+            }
+        });
+      </script> -->
 </body>
 </html>

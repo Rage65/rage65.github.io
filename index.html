@@ -6,11 +6,13 @@
     <meta name="keywords" content="Rage65, Tech, rag3r, rage65"></meta>
     <title>About Me</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="homepage.css">
     <link rel="icon" type="image/jpeg" href="favicon.JPEG">
 </head>
 <audio src=""></audio>
 <body>
     <header>
+      <!-- <input type="checkbox" class="theme-checkbox" checked="true"> -->
         <h1>About Me</h1>
     </header>
     <div class="motd">
@@ -20,9 +22,11 @@
      <!--<center><p>Happy Thanksgiving!</p></center>!-->
      <!--<center><p>How fast can your laptop compile the linux kernel?</p></center>!-->
      <!--<center><p style="color:lime">Clear Your Cookies Day!</p></center>!-->
+     <center><a href="glass"><h1 style="color: rgba(255, 255, 255, 0.3); display: inline;">Glass</h1></a><p style="display: inline; margin-left: 5px;">is the future!</p></center>
+
     </div>
     <div class="container">
-        <section class="about-me">
+        <section class="title">
             <h2>Hi, I'm Rage65</h2>
             <p>I am a programer, photogropher, sys admin, homlaber, hardware hacker, and a computer lover!</p>
         </section>
@@ -46,35 +50,10 @@
                 <p class="text">My Github</p>
               </button></p></a>
         </section>
-       <!--<input type="checkbox" class="theme-checkbox" checked="true">--> 
+       
         <img class="corner-image" src="pfp.JPEG" alt="Image">   
     </div>
-    <script>  
-        const themeCheckbox = document.querySelector('.theme-checkbox');
-        const container = document.querySelector('.container');
-        const text = document.querySelectorAll('h2, p');
-    
-        themeCheckbox.addEventListener('change', () => {
-          if (themeCheckbox.checked) {
-            // Light mode
-            container.classList.remove('dark-mode');
-            themeCheckbox.checked = false;
-            container.classList.add('light-mode');
-            text.forEach(element => {
-              element.classList.add('text-dark')
-              element.classList.remove('text-light')
-            });
-          } else {
-            // Dark mode
-            container.classList.remove('light-mode');
-            container.classList.add('dark-mode');
-            text.forEach(element => {
-              element.classList.add('text-light')
-              element.classList.remove('text-dark')
-            });
-          }
-        });
-    </script> 
+    <!--<script src="theme.js"></script>-->
 
      
 </body>

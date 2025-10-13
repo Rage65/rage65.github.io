@@ -3,25 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="projects, hardware, software, Rage65, rag3r">
     <title>Projects</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/jpeg" href="../../favicon.JPEG">
 </head>
 <body>
     <header>
-        <a href="../"><h1>My Projects</h1></a>
+        <!-- <input type="checkbox" class="theme-checkbox" checked="true"> -->
+        <a href="/"><h1>My Projects</h1></a>
     </header>
-    <div class="container">
-        <section class="projectes">
+      <div class="container">
+        <div class="archives">
             <ul>
-                <li><a href="dms/">Digital Music Server</a></li>
+            <li><a href="dms/">Digital Music Server</a></li>
                 <p> a industrial pc and whats inside</p>
                 <li><a href="../calc/">calculator</a></li>
                 <p> A calulator with a hidden feature</p>
                 <p>More Coming Soon!</p>
             </ul>
-        </section>
-        
-    </div>
+         </div>
+     </div>
+    <!-- <script>
+        const themeCheckbox = document.querySelector('.theme-checkbox');
+        const container = document.querySelector('.container');
+        const text = document.querySelectorAll('h2, p');
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        if (isDarkMode) {
+            themeCheckbox.checked = false;
+            container.classList.add('dark-mode');
+            text.forEach(element => {
+                element.classList.add('text-light');
+                element.classList.remove('text-dark');
+            });
+        } else {
+            themeCheckbox.checked = true;
+            container.classList.add('light-mode');
+            text.forEach(element => {
+                element.classList.add('text-dark');
+                element.classList.remove('text-light');
+            });
+        }
+        themeCheckbox.addEventListener('change', () => {
+            if (themeCheckbox.checked) {
+                container.classList.remove('dark-mode');
+                container.classList.add('light-mode');
+                text.forEach(element => {
+                    element.classList.add('text-dark');
+                    element.classList.remove('text-light');
+                });
+                localStorage.setItem('darkMode', 'false');
+            } else {
+                container.classList.remove('light-mode');
+                container.classList.add('dark-mode');
+                text.forEach(element => {
+                    element.classList.add('text-light');
+                    element.classList.remove('text-dark');
+                });
+                localStorage.setItem('darkMode', 'true');
+            }
+        });
+      </script>
+      <script src="../theme.js"></script> -->
 </body>
 </html>

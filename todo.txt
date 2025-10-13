@@ -1,0 +1,4 @@
+todo 
+change about-me class to Title class
+review and clean up class namesa
+ go thorugh and rewrite some things so that the archives section providesd the how to and the projects section provides more about the process I whent thorugh. 
