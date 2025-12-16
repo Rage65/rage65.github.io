@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background: linear-gradient(-45deg, #F29C11, #E94F37, #D17D3D, #F7C34C);
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
   min-height: 100vh;
@@ -94,7 +94,7 @@ header a {
 .archives a,
 .contact-info a {
   text-decoration: none;
-  color: #cf6607;
+  color: #0000EE;
 }
 .projectes p,
 .software p {
@@ -116,13 +116,13 @@ header a {
   text-align: center;
 }
 .download-button {
-  background-color: #b66e2f;
+  background-color: #007bff;
 }
 .download-button:hover {
-  background-color: #cf6607;
+  background-color: #0056b3;
 }
 .link-button {
-  background-color: #eb7c1c;
+  background-color: #007bff;
   text-align: left;
 }
 
@@ -155,13 +155,13 @@ pre code {
   margin-top: 7px;
   padding: 5px 10px;
   border: none;
-  background-color: #eb7c1c;
+  background-color: #007bff;
   color: white;
   cursor: pointer;
   border-radius: 5px;
 }
 .copy-button:hover {
-  background-color: #cf6607;
+  background-color: #0056b3;
 }
 
 /* THEME SWITCH
