@@ -4,20 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Rage65, ReQuest, Hardware Hacking, Serious Play, Rage65, rag3r "></meta>
-    <title>Digital Music Server Hacking</title>
+    <title>Digital Music Server Exploring9</title>
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../../carosel/bootstrap.min.css">
     <link rel="icon" type="image/jpeg" href="../../favicon.JPEG">
 </head>
 <body>
-    <header>
-        <!-- <input type="checkbox" class="theme-checkbox" checked="true"> -->
-        <a href="/"><h1>DMS Hacking</h1></a>
-    </header>
     <div class="container">
+        <a href="/"><h1>DMS (Digital Music Server) Exploration</h1></a>
         <section class="about-me">
-            <h2>My project</h2>
-            <p>DMS (Digital Music Server) hacking</p>
+
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -82,7 +78,7 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <p>This is a DMS that got. I was at a ewaste store and saw something out of the corner of my eye, a rack mounted piece of equipment with linux sticker on the harddrive. Here where my steps to hacking it into running a different os. First I opened up the machine to see what I was dealing with. It seemed to just be a standard socket A system. The weird part is it had 128 mb sdram. The motherboard also only had 1 pci slot and nothing else. The motherboard had an onboard vga board which was not a given back then and not all boards had onboard video. After looking into this for a while I believe that this does ot have onboard video either but it appears to use the cpu for rendering graphics. The pc also had a removable 80gb seagate ide drive. After realizing it was just a pc I tried getting to a boot menu but no matter what button I mashed I could not get to one. I tried both a ps/2 kb and a usb one to no avail. Then I decided to try to change the boot order in the bios but i could not seem to get into it on my sub keyboard so then I pulled out the hdd to force it to ask if I wanted to go to bios and from there I was able to get in using a ps/2 kb. Once I was in the bios I was able to enable usb kb/mice and booting off usb. Then I changed the boot order as well so the MDS would try to boot off my usb drive firs. from there I was able to boot into my ventoy usb. I also have taken a disk image of the entire drive and will post it on my archive page. In the future I want to see what modifications it would take to run windows on the thing as it does not appear to have a gpu. I also want to see its performance as a linux machine. (EDIT: I finnaly got the time to remove the cpu cooler and it turns out that I suck at guessing sockets and also that it was a Intel Celeron 850/128/100/1.75v cpu )</p>
+        <p>This is a DMS that got. I was at a ewaste store and saw something out of the corner of my eye, a rack mounted piece of equipment with linux sticker on the harddrive. Here where my steps to hacking it into running a different os,and exploring its hardware. First I opened up the machine to see what I was dealing with. It seemed to just be a standard socket A system. The weird part is it had 128 mb sdram. The motherboard also only had 1 pci slot and nothing else. The motherboard had an on-board vga port which was not a given back then and not all boards had on-board video controllers. After looking into this for a while I believe that this does not have intigrated graphics either but it appears to use the cpu for rendering graphics. The pc also had a removable 80gb seagate ide drive. After realizing it was just a pc I tried getting to a boot menu but no matter what button I mashed I could not get to one. I tried both a ps/2 kb and a usb one to no avail. Then I decided to try to change the boot order in the bios but I could not seem to get into it on my USB keyboard so then I pulled out the hdd to force it to ask if I wanted to go to bios. From there I was able to get in using a ps/2 kb. Once I was in the bios I was able to enable usb kb/mice and booting off usb. Then I changed the boot order as well so the BIOS would try to boot off my usb drive before the internal HDD. from there I was able to boot into my ventoy usb. I also have taken a disk image of the entire drive unfortunetally I cannot publicly share it becouse it contains copyrighted assets and music, but I still have it and can share a stripped down image if you dm me. In the future I want to see what modifications it would take to run windows on the thing as it does not appear to have a gpu. I also want to see its performance as a linux machine. (EDIT: I finnaly got the time to remove the cpu cooler and it turns out that I suck at guessing sockets and also that it was a Intel Celeron 850/128/100/1.75v cpu )</p>
     </section>
     </div>
     <script src="../../carosel/jquery.min.js"></script>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/jpeg" href="../favicon.JPEG">
     <style>
-        /* Styling for the hobbies section */
+        
         .hobbies {
             display: flex;
             flex-wrap: wrap;
@@ -60,7 +60,7 @@
             z-index: 1000; /* On top */
             
             left: 0;
-            top: 0;
+            top: (50vh- 50%);
             width: 100%;
             height: 100%;
             overflow: auto;
@@ -94,16 +94,12 @@
     </style>
 </head>
 <body>
-    <header>
-        <!-- <input type="checkbox" class="theme-checkbox" checked="true"> -->
-       <a href="/"><h1>Photos</h1></a>
-    </header>
     <div class="container">
+        <a href="/"><h1>Photos</h1></a>
         <section class="title">
             <h2>Hello There,</h2>
             <p>I recently got into photography and thought I would post my photos here. Feel free to download them and use them for whatever you want (Just give me credit pls!)</p>
         </section>
-
         <section class="hobbies" id="photos-gallery">
             <!-- Images will be loaded here -->
         </section>
@@ -174,7 +170,7 @@
         }
 
         loadImages();
-    </script>
+    </script></p>
      <!-- <script>
         const themeCheckbox = document.querySelector('.theme-checkbox');
         const container = document.querySelector('.container');

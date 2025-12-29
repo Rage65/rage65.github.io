@@ -1,10 +1,8 @@
-change about-me class to Title class
-review and clean up class namesa
- go thorugh and rewrite some things so that the archives section providesd the how to and the projects section provides more about the process I whent thorugh.
-seo optimisation
-Optimise meta flags on each pages
+add blog instead of little stories
+ -dms
+ -2006 mac pro (music)
+ -ipad photo frame
+ -arcade machine
+ 
 
-Page optimisation
-lower image size/quality
-split up css
-remove unecesarry files
+Fix mc server rules pacge to remove headder? kinda fits tho tbh
